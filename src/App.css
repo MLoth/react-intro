@@ -1,47 +1,97 @@
-#root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
+:root {
+    --page-background: #eeecec;
+    --card-background: #fff;
+
+    --category-1: #205330;
+    --category-2: #fd2e65;
+    --category-3: #959fa7;
+    --category-4: #f2711c;
+    --category-5: #007bff;
 }
 
-.logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-}
-.logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .logo {
-        animation: logo-spin infinite 20s linear;
-    }
+.app {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    background-color: var(--page-background);
 }
 
 .card {
-    padding: 2em;
-}
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    background-color: var(--card-background);
+    min-width: 650px;
 
-.read-the-docs {
-    color: #888;
+    & .card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    & .card-title {
+    }
+
+    & .card-body {
+        grid-column: span 2;
+    }
+
+    & .card-actions {
+        display: flex;
+        gap: 0.5rem;
+        margin-left: auto;
+    }
+
+    & .card-action {
+    }
 }
 
 .bar-chart {
-    display: flex;
-    max-width: 40rem;
+    width: 100%;
+
+    & .bar-legend {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+
+        & .bar-legend-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        & .bar-label {
+            display: block;
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+        }
+
+        & .bar-category-group {
+            margin-left: auto;
+            text-align: right;
+
+            & .bar-category-label {
+                display: block;
+                margin: 0;
+            }
+
+            & .bar-category-percentage {
+                display: block;
+                margin: 0;
+            }
+        }
+    }
+
+    & .bar-data {
+        width: 100%;
+        display: flex;
+        margin: 2rem 0 1rem;
+    }
 }
