@@ -1,5 +1,9 @@
 const BarChart = ({ data, categories }) => {
-  const colors = ["#FF5733", "#33FF57", "#5733FF", "#FF33FF", "#33FFFF"];
+  const calculatePercentage = (value) => {
+    return ((value / data.reduce((acc, curr) => acc + curr, 0)) * 100).toFixed(
+      0,
+    );
+  };
 
   return (
     <div className="bar-chart">
@@ -16,7 +20,9 @@ const BarChart = ({ data, categories }) => {
             ></span>
             <div className="bar-category-group">
               <p className="bar-category-label">{categories[index]}</p>
-              <p className="bar-category-percentage">{item}%</p>
+              <p className="bar-category-percentage">
+                {calculatePercentage(item)}%
+              </p>
             </div>
           </div>
         ))}

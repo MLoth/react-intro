@@ -9,6 +9,14 @@
     --category-5: #007bff;
 }
 
+body,
+html {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
 .app {
     min-height: 100vh;
     display: grid;
