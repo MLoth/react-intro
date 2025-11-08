@@ -1,0 +1,5 @@
+const GenericButton = ({ children }) => {
+  return <button>{children}</button>;
+};
+
+export default GenericButton;
